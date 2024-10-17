@@ -7,7 +7,7 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
-import {
+import { 
   SafeAreaView,
   ScrollView,
   StatusBar,
