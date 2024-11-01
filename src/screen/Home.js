@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View, Button, TextInput, ActivityIndicator} from 'react-native'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
 import { screens } from '../constants'
 import { setUser } from '../redux/reducer/homeReducer'
 import { selectCurrentUser, selectDataUser, selectLoading } from '../redux/selector/homeSelector';
 import { fetchUsers } from '../redux/action/homeActions'
-import { getState } from '../redux/store/store'
+// import { getState } from '../redux/store/store'
 
 const Home = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -22,14 +21,6 @@ const Home = ({ navigation }) => {
     useEffect(() => {
         console.log("useEffect")
         dispatch(fetchUsers())
-        // try {
-        //     const response = await axios.get('https://reqres.in/api/users?delay=1', { responseType: 'json' })
-        //     const data = response?.data?.data
-        //     console.log("data", data)
-        //     return data
-        // } catch (error) {
-        //     console.log("error", error)
-        // }
     }, []);
 
     const onChangeText = (value) => {
